@@ -4,6 +4,8 @@
 		<meta charset="UTF-8">
 		<base href="/">
 		<title>API-Connected Highlighting</title>
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
 		<script type="text/javascript" src="http://editor.signavio.com/mashup/signavio.js"></script>
     <script type="text/plain">
       {
@@ -18,6 +20,11 @@
       <form id="currencyConverterForm" class="form-signin">
         <h1 class="form-signin-heading text-muted">API-Connected Highlighting</h1>
         
+        <div class="input-group input-group-lg">
+          <span class="input-group-addon" id="sizing-addon1" title="Search">Search</span>
+          <input type="text" id="search_input" class="form-control" placeholder="Enter keyword" tabindex="1" aria-describedby="sizing-addon1">
+        </div>
+
         <div id="errorSection"></div>
       </form>
     </div>
