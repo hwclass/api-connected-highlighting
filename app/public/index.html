@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="libs/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="libs/core_js/dist/core.min.js"></script>
+    <script type="text/javascript" src="js/modules/config.js"></script>
+    <script type="text/javascript" src="js/modules/extensions.js"></script>
+    <script type="text/javascript" src="js/modules/searchInput.js"></script>
+    <script type="text/javascript" src="js/modules/keywordList.js"></script>
 	</head>
 	<body>		
     <div id="fullscreen_bg" class="fullscreen_bg"/>
@@ -18,16 +23,24 @@
           <input type="text" id="search_input" class="form-control" placeholder="Enter keyword" tabindex="1" aria-describedby="sizing-addon1">
         </div>
         <h3 class="signavio-title"><a href="http://www.signavio.com">productActivity</a></h3>
-        <script type="text/javascript" src="https://editor.signavio.com/mashup/signavio.js"></script>
+        <script type="text/javascript" src="https://editor.signavio.com/mashup/signavio.js" id="signavioScript"></script>
+        <script type="text/javascript">
+          function register(facade) {
+            facade.linkShape({href: function(resourceId){
+                alert ("Clicked element: " + resourceId);
+              }
+            });
+          }
+        </script>
         <script type="text/plain" id="signavioRequestDetails">
           {
-            url: 'https://editor.signavio.com/p/model/bdc48d12a3984cc5bef3ebb24f97dcb7',
+            url: "https://editor.signavio.com/p/model/bdc48d12a3984cc5bef3ebb24f97dcb7",
             authToken: '90e79e23cd8d3d7088e203d6a6e9d2f4f1d2c8109caceeb3b0de13f1e2e2_e2c760f97bed6bb72ef04d5c847347a5f430e668655ebc3492b5ca40727f84f0_24d2c752f424d6dc38e761a868e85e81994acedf84378d8629726ebafdd1',
             overflowX: 'fit',
             overflowY: 'fit',
             zoomSlider: true,
             linkSubProcesses: false,
-            focus : 'secondActivity'
+            focus: 'testActivity'
           };
         </script>
         <a class="signavio-logo" href="http://www.signavio.com" rel="external"><img src="https://editor.signavio.com/mashup/img/signavio.png" alt="jBPM Business Process Model and Notation cloud" /></a>
@@ -35,5 +48,109 @@
       </form>
     </div>
     <ul id="keywordList"></ul>
+
+    <!---
+
+    These are the requirements for this page:
+     * divide the page into 4 columns with an unknown number of rows;
+     * columns are equal in size with 10px spacing between them;
+     * in every column 1 photo is displayed with the title below;
+     * photoâ€™s can be either portrait (150px X 200px) or landscape (200px X 150px), but you donâ€™t know that upfront. A row can thus have only landscape, only portrait, or a mix of landscape and portrait photoâ€™s;
+     * the spacing between rows is always 10px. Because of the previous rule, rows can thus have unequal height; 
+     * photoâ€™s & title are aligned in the center of the column, the title is 5px below the photo;
+     * titles are vertically aligned to each other;
+     * the HTML is automatically generated & minified (all superfluous whitespace is removed);
+     * you can not use any JavaScript in your solution
+
+    -->
+    <style>
+    .photo-grid {list-style-type: none; white-space: nowrap;}
+    .photo-grid li {display: inline; width: 25%; float: left; margin: 0 0 10px 0; text-align: center;}
+    .photo-grid li .photo-link {display:inline-block; vertical-align: middle;}
+    .photo-grid li .photo-link img {display:  block; padding: 0 10px 0 0;}
+    .photo-grid li .photo-link .photo-title {margin: 5px 0 0 0;}
+    </style>
+    <ul class="photo-grid">
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class="photo-title">a
+        girl</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">bender_wants_to_kill_all_the_people</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">MrSpock</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class="photo-title">Marge
+        Simpson</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class="photo-title">My
+        future place to live</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class="photo-title">a
+        ship</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">BOOOOM</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">Moto</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">night</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class="photo-title">a
+        boy</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class="photo-title">these
+        flowers are soooo nice</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">fashion_is_sometimes_strange_strange_strange</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">Hungry?</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">kids</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">friends</span></a>
+      </li>
+      <li class="photo">
+        <a class="photo-link" href="#"><img class="photo-img" src=
+        "http://placehold.it/200x150.jpg"> <span class=
+        "photo-title">Sheldon</span></a>
+      </li>
+    </ul>
   </body>
 </html>
