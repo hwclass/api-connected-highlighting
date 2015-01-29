@@ -6,35 +6,31 @@
 		<title>API-Connected Highlighting</title>
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="libs/jquery/dist/jquery.js"></script>
 	</head>
 	<body>		
     <div id="fullscreen_bg" class="fullscreen_bg"/>
     <div class="container">
       <form id="currencyConverterForm" class="form-signin">
         <h1 class="form-signin-heading text-muted">API-Connected Highlighting</h1>
-        
         <div class="input-group input-group-lg">
           <span class="input-group-addon" id="sizing-addon1" title="Search">Search</span>
           <input type="text" id="search_input" class="form-control" placeholder="Enter keyword" tabindex="1" aria-describedby="sizing-addon1">
         </div>
-
         <h3 class="signavio-title"><a href="http://www.signavio.com">productActivity</a></h3>
-        
         <script type="text/javascript" src="https://editor.signavio.com/mashup/signavio.js"></script>
         <script type="text/plain" id="signavioRequestDetails">
           {
-            url: "https://editor.signavio.com/p/model/bdc48d12a3984cc5bef3ebb24f97dcb7",
-            authToken: "90e79e23cd8d3d7088e203d6a6e9d2f4f1d2c8109caceeb3b0de13f1e2e2_e2c760f97bed6bb72ef04d5c847347a5f430e668655ebc3492b5ca40727f84f0_24d2c752f424d6dc38e761a868e85e81994acedf84378d8629726ebafdd1",
-            overflowX: "fit",
-            overflowY: "fit",
+            url: 'https://editor.signavio.com/p/model/bdc48d12a3984cc5bef3ebb24f97dcb7',
+            authToken: '90e79e23cd8d3d7088e203d6a6e9d2f4f1d2c8109caceeb3b0de13f1e2e2_e2c760f97bed6bb72ef04d5c847347a5f430e668655ebc3492b5ca40727f84f0_24d2c752f424d6dc38e761a868e85e81994acedf84378d8629726ebafdd1',
+            overflowX: 'fit',
+            overflowY: 'fit',
             zoomSlider: true,
             linkSubProcesses: false,
             focus : 'secondActivity'
           };
         </script>
-
         <a class="signavio-logo" href="http://www.signavio.com" rel="external"><img src="https://editor.signavio.com/mashup/img/signavio.png" alt="jBPM Business Process Model and Notation cloud" /></a>
-
         <div id="errorSection"></div>
       </form>
     </div>
